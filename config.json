@@ -1,0 +1,8 @@
+{
+    "db": {
+        "username": "root",
+        "password": "root",
+        "host": "flags-db",
+        "port": "27017"
+    }
+}
