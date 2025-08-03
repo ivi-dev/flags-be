@@ -1,7 +1,11 @@
+import cors from 'cors';
 import express from 'express';
 import { getCountries } from './services/countries.js';
+
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 app.get('/countries/all', async (req, res) => {
   res.json(await getCountries());
