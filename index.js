@@ -9,8 +9,8 @@ app.use(cors());
 
 app.get('/countries/all', async (req, res) => {
   res.json(await getCountries());
-})
+});
 
 app.listen(port, () => {
   console.log(`Flags backend listening on port ${port}`);
-})
+});
