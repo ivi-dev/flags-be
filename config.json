@@ -2,7 +2,7 @@
     "db": {
         "username": "root",
         "password": "root",
-        "host": "flags-db",
+        "host": "flags-db-1",
         "port": "27017"
     }
 }
