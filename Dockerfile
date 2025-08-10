@@ -25,4 +25,4 @@ COPY . .
 RUN rm -r scripts nginx.conf
 RUN npm install
 
-CMD ["node", "index.js"]
+CMD ["/bin/sh", "-c", "nginx && node index.js"]
