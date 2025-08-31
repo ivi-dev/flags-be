@@ -24,5 +24,6 @@ WORKDIR $APP_HOME
 COPY . .
 RUN rm -r scripts nginx.conf
 RUN npm install
+RUN mkdir - p /var/cache/nginx/flags
 
 CMD ["/bin/sh", "-c", "nginx && node index.js"]
