@@ -7,7 +7,7 @@ FROM node:24-alpine3.21
 
 ENV SSL_PUBLIC=/etc/ssl/certs/flags \
     SSL_PRIVATE=/etc/ssl/private/flags \
-    NGINX_CACHE_DIR=/var/log/nginx/flags
+    NGINX_CACHE_DIR=/var/cache/nginx/flags
 
 COPY scripts/*nginx*.sh scripts/pre-start.sh /root/
 RUN chown root /root/*.sh && chmod 700 /root/*.sh
@@ -23,6 +23,7 @@ RUN apk add nginx@nginx
 COPY nginx.conf /etc/nginx
 RUN mkdir -p $NGINX_CACHE_DIR
 RUN chown -R nginx $NGINX_CACHE_DIR
+RUN chmod -R 700 $NGINX_CACHE_DIR
 RUN /root/setup-nginx-logging.sh
 
 
